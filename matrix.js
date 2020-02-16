@@ -16,6 +16,12 @@ let Matrix = {
 	},
 
 	multiply: function(matrix1, matrix2){
+		function dotPoint(tup1, tup2){
+			let sum = 0;
+			for (let i = 0; i < tup1.length; i++){
+				sum += (tup1[i] * tup2[i])
+			}return sum
+		}
 		if (typeof matrix1 == 'number'){
 			//Scalar multiplication
 			for (i = 0; i < matrix2.length; i++){
@@ -26,14 +32,20 @@ let Matrix = {
 		}else {
 			//Matrix mulitplication
 			let cols = [];
-			for (let i = 0; i < matrix1[0].length; i++){
+			for (let i = 0; i < matrix2[0].length; i++){
 				cols.push([])
-				for (row of matrix1){
+				for (row of matrix2){
 					cols[i].push(row[i])
 				}
-			}return cols
+			}
+			//Use dotPoint to multiply the columns and rows.
+			let newMatrix = [];
+			for (row of matrix1){
+				for (col of cols){
+					newMatrix.push(dotPoint(row, col))
+				}
+			}return newMatrix
 		}
-		
 	},
 
 	divide: function(matrix1, matrix2){
@@ -44,15 +56,15 @@ let Matrix = {
 
 
 
-let mat1 = [[5, 2, 9],
-			[0, 1, 3],]
+let mat1 = [[5, 2],
+			[0, 1],]
 
-let mat2 = [[2, 3, 6], 
-			[4, 1, 7],]
+let mat2 = [[2, 3], 
+			[4, 1],]
 
 
 debug(Matrix.multiply(mat1, mat2))
-debug(Matrix.add(mat1, mat2))
+
 
 
 
