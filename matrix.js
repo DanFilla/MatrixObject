@@ -56,19 +56,6 @@ let Matrix = {
 
 
 
-let mat1 = [[5, 2],
-			[0, 1],]
-
-let mat2 = [[2, 3], 
-			[4, 1],]
-
-
-debug(Matrix.multiply(mat1, mat2))
-
-
-
-
-
 
 
 
