@@ -1,4 +1,18 @@
 let Matrix = {
+	//validators for the matrix object.
+	isMatrix: function(matrix){
+		for (row of matrix){
+			if (row.length === matrix[0])
+				continue
+		}else {
+			return false
+		}return true
+	}
+
+	canMultiply: function(matrix1, matrix2){
+
+	}
+	//math methods.
 	add: function(matrix1, matrix2){
 		for (i = 0; i < matrix1.length; i++){
 			for (j = 0; j < matrix1[0].length; j++){
@@ -49,52 +63,7 @@ let Matrix = {
 	},
 
 	divide: function(matrix1, matrix2){
-		return NaN
+		return undefined
 	},
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
