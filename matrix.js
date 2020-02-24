@@ -2,16 +2,19 @@ let Matrix = {
 	//validators for the matrix object.
 	isMatrix: function(matrix){
 		for (row of matrix){
-			if (row.length === matrix[0])
+			if (row.length === matrix[0]){
 				continue
-		}else {
-			return false
+			}else {
+				return false
+			}
 		}return true
-	}
+	},
 
 	canMultiply: function(matrix1, matrix2){
+		return undefined
+	},
 
-	}
+
 	//math methods.
 	add: function(matrix1, matrix2){
 		for (i = 0; i < matrix1.length; i++){
@@ -61,9 +64,4 @@ let Matrix = {
 			}return newMatrix
 		}
 	},
-
-	divide: function(matrix1, matrix2){
-		return undefined
-	},
-
 }
